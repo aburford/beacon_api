@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room: 
+  start_time: MyString
+
+two:
+  room: 
+  start_time: MyString
