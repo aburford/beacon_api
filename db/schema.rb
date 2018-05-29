@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20180525214658) do
 
-  create_table "class_sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "class_sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "room"
     t.string "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "presences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "presences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean "present"
     t.bigint "class_session_id"
     t.bigint "student_id"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180525214658) do
     t.index ["student_id"], name: "index_presences_on_student_id"
   end
 
-  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "username"
     t.string "auth_token"
     t.datetime "created_at", null: false

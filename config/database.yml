@@ -8,7 +8,7 @@
 default: &default
   adapter: mysql2
   pool: 5
-  username: root
+  username: students/
   password: <%= ENV['DATABASE_PASSWORD'] %>
   host: localhost
 
