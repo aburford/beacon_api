@@ -44,6 +44,8 @@ class ApiController < ApplicationController
 
   def present
   	authenticate
+  	puts params["hashes"]
+  	render plain: 'success!'
   end
 
   def authenticate
