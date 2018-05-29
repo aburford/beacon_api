@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180525214658) do
+ActiveRecord::Schema.define(version: 20180529163506) do
 
   create_table "class_sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "room"
     t.string "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hash_value"
   end
 
   create_table "presences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

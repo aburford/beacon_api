@@ -43,9 +43,23 @@ class ApiController < ApplicationController
   end
 
   def present
-  	authenticate
-  	puts params["hashes"]
-  	render plain: 'success!'
+  	# params will include both hashes and attendance codes...
+  	student = authenticate
+  	puts student
+		presences = JSON.parse params["presences"]
+		puts hashes
+		hashes.each do |h|
+
+		end
+		# passing an array to .where() will automatically loop through all values
+		classPresences = ClassSession.where(hash_value: hashes)
+		puts classPresences
+
+		#arrayStudentPres = @student.presences
+		#arrayClassHashes = ClassSession.find_by(:studentValues).presences
+		#markPresentFor = (arrayStudentPres & arrayClassHashes)
+		#markPresentFor.presence = true
+		#markPresentFor.save
   end
 
   def authenticate
@@ -53,7 +67,7 @@ class ApiController < ApplicationController
   	authenticate_or_request_with_http_token do |token, options|
   		puts "token:"
   		puts token
-      Student.find_by(auth_token: token)
+    	Student.find_by(auth_token: token)
     end
   end
 end

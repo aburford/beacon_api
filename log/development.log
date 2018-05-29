@@ -133,3 +133,463 @@ Processing by Rails::WelcomeController#index as */*
 Completed 200 OK in 32ms (Views: 11.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` LIMIT 11[0m
+Started POST "/api/get_token" for 10.7.0.57 at 2018-05-29 13:39:08 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"burfordan18", "pass"=>"qwert"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('burfordan18', '563f013c7f87472fb02d00516b417b7f', '2018-05-29 13:39:08', '2018-05-29 13:39:08')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 36ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` LIMIT 11[0m
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 13:39:57 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '563f013c7f87472fb02d00516b417b7f' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 28ms (Views: 12.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 13:42:47 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"34b8c621e8e64c72991d2144db6c7be2\"]"}
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '563f013c7f87472fb02d00516b417b7f' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 13:44:43 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '563f013c7f87472fb02d00516b417b7f' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 13:49:00 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '563f013c7f87472fb02d00516b417b7f' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 13:56:31 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"16596d62153747a58350660b3fa0a872\"]"}
+  [1m[36mStudent Load (3.4ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '563f013c7f87472fb02d00516b417b7f' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 13:56:38 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '563f013c7f87472fb02d00516b417b7f' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/get_token" for 10.7.0.57 at 2018-05-29 14:05:50 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"burfordan18", "pass"=>"pout"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('burfordan18', 'c95d5b9b25774cd5bc46dd5e437b2d06', '2018-05-29 14:05:50', '2018-05-29 14:05:50')[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 16.8ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 14:14:19 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"16596d62153747a58350660b3fa0a872\"]"}
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 14:15:01 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"34b8c621e8e64c72991d2144db6c7be2\"]"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 14:15:16 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 14:16:04 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 14:20:47 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"34b8c621e8e64c72991d2144db6c7be2\"]"}
+  [1m[36mStudent Load (2.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 14:22:09 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 14:23:57 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 14:25:24 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 14:27:41 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"7c6195bb942a4c719ee96a4fb94f6788\"]"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 14:28:47 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 14:29:08 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"7c6195bb942a4c719ee96a4fb94f6788\"]"}
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 14:29:57 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 14:30:54 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"1a48fa063cff47efaf1f011e23d4e6b0\"]"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 14:31:02 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 14:34:51 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"1a48fa063cff47efaf1f011e23d4e6b0\"]"}
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 15:13:23 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"7c6195bb942a4c719ee96a4fb94f6788\"]"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 33ms (Views: 3.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 15:13:43 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 15:14:13 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"1a48fa063cff47efaf1f011e23d4e6b0\"]"}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 15:47:39 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"7c6195bb942a4c719ee96a4fb94f6788\"]"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  [1m[36mClassSession Load (27.2ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE (["7c6195bb942a4c719ee96a4fb94f6788"]) LIMIT 1[0m
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 30.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '["7c6195bb942a4c719ee96a4fb94f6788"]) LIMIT 1' at line 1: SELECT  `class_sessions`.* FROM `class_sessions` WHERE (["7c6195bb942a4c719ee96a4fb94f6788"]) LIMIT 1):
+  
+app/controllers/api_controller.rb:49:in `present'
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 15:48:50 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 15:49:00 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"7c6195bb942a4c719ee96a4fb94f6788\"]"}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.7ms)
+
+
+  
+NameError (undefined local variable or method `string' for #<ApiController:0x000055856f1979a0>
+Did you mean?  String):
+  
+app/controllers/api_controller.rb:48:in `present'
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"7c6195bb942a4c719ee96a4fb94f6788\"]"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+Completed 500 Internal Server Error in 249ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `string' for #<ApiController:0x00007fa718220f58>
+Did you mean?  String):
+  
+app/controllers/api_controller.rb:48:in `present'
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 15:50:01 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"7c6195bb942a4c719ee96a4fb94f6788\"]"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+No template found for ApiController#present, rendering head :no_content
+Completed 204 No Content in 31ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 15:50:33 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 16:08:56 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 16:10:22 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 16:13:17 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 16:17:35 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (10.4ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddHashToClassSession (20180529162932)
+  [1m[35m (148.5ms)[0m  [1m[35mALTER TABLE `class_sessions` ADD `hash` varchar(255)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180529162932')[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 16:31:00 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 42ms (Views: 7.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/present" for 10.7.0.57 at 2018-05-29 16:31:26 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#present as */*
+  Parameters: {"hashes"=>"[\"7c6195bb942a4c719ee96a4fb94f6788\"]"}
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  [1m[36mClassSession Load (0.4ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+No template found for ApiController#present, rendering head :no_content
+Completed 204 No Content in 29ms (ActiveRecord: 2.5ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mClassSession Load (0.6ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` LIMIT 11[0m
+  [1m[36mClassSession Load (0.3ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` ORDER BY `class_sessions`.`id` ASC LIMIT 1[0m
+Started GET "/api/hashes" for 10.7.0.57 at 2018-05-29 16:33:45 +0000
+Cannot render console from 10.7.0.57! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = 'c95d5b9b25774cd5bc46dd5e437b2d06' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemoveHashFromClassSession (20180529163416)
+  [1m[35m (132.8ms)[0m  [1m[35mALTER TABLE `class_sessions` DROP `hash`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180529163416')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddHashValueToClassSession (20180529163506)
+  [1m[35m (140.8ms)[0m  [1m[35mALTER TABLE `class_sessions` ADD `hash_value` varchar(255)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180529163506')[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `class_sessions` (`created_at`, `updated_at`) VALUES ('2018-05-29 16:35:27', '2018-05-29 16:35:27')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mClassSession Load (1.5ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` LIMIT 11[0m
+  [1m[36mClassSession Load (0.9ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`hash_value` = 'asdf' LIMIT 11[0m
+  [1m[36mClassSession Load (0.9ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`hash_value` = 'asdf' LIMIT 11[0m
+  [1m[36mClassSession Load (0.6ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`room` = 123 LIMIT 11[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (29.8ms)[0m  [1m[33mUPDATE `class_sessions` SET `room` = 123, `start_time` = '7:34', `updated_at` = '2018-05-29 16:37:46', `hash_value` = 'asdf' WHERE `class_sessions`.`id` = 1[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mClassSession Load (0.7ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`room` = 123 LIMIT 11[0m
+  [1m[36mClassSession Load (0.8ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`hash_value` = 'asdf' LIMIT 11[0m
+  [1m[36mClassSession Load (3.4ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`room` IN (123, 124, 125) LIMIT 11[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `class_sessions` (`room`, `created_at`, `updated_at`) VALUES (122, '2018-05-29 16:39:37', '2018-05-29 16:39:37')[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `class_sessions` (`room`, `created_at`, `updated_at`) VALUES (124, '2018-05-29 16:39:48', '2018-05-29 16:39:48')[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `class_sessions` (`room`, `created_at`, `updated_at`) VALUES (124, '2018-05-29 16:39:50', '2018-05-29 16:39:50')[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mClassSession Load (1.0ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` LIMIT 11[0m
+  [1m[36mClassSession Load (0.7ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`room` IN (123, 124, 125) LIMIT 11[0m
+  [1m[35m (27.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `class_sessions` WHERE `class_sessions`.`room` IN (123, 124, 125)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `class_sessions`[0m
+  [1m[36mClassSession Load (0.6ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `class_sessions` WHERE `class_sessions`.`room` IN (123, 124, 125)[0m
+  [1m[36mClassSession Load (1.3ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`hash_value` IN ('asdf', 'qwer', 'rtyu') LIMIT 11[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `class_sessions` WHERE `class_sessions`.`hash_value` IN ('asdf', 'qwer', 'rtyu')[0m
