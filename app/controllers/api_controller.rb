@@ -44,15 +44,15 @@ class ApiController < ApplicationController
 
   def present
   	student = authenticate
-  	puts student
 		# passing an array to .where() will automatically loop through all values
 		hashes = HashValue.where(value: JSON.parse(params["hashes"]))
 		hashes.each do |h|
-			p = student.presences.where(class_session: h.class_session)
+			p = student.presences.where(class_session: h.class_session).first
 			p.attendance_code = h.attendance_code
 			p.save
-			puts "Marked #{student.username} as #{h.attendance_code} for class session in room #{h.class_session.room} at time #{h.class_session.start_time}"
+			puts "Marked #{student.username} as #{h.attendance_code.code} for class session in room #{h.class_session.room} at time #{h.class_session.start_time}"
 		end
+    render plain: "Success!"
   end
 
   def authenticate
