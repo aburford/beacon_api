@@ -43,23 +43,16 @@ class ApiController < ApplicationController
   end
 
   def present
-  	# params will include both hashes and attendance codes...
   	student = authenticate
   	puts student
-		presences = JSON.parse params["presences"]
-		puts hashes
-		hashes.each do |h|
-
-		end
 		# passing an array to .where() will automatically loop through all values
-		classPresences = ClassSession.where(hash_value: hashes)
-		puts classPresences
-
-		#arrayStudentPres = @student.presences
-		#arrayClassHashes = ClassSession.find_by(:studentValues).presences
-		#markPresentFor = (arrayStudentPres & arrayClassHashes)
-		#markPresentFor.presence = true
-		#markPresentFor.save
+		hashes = HashValue.where(value: JSON.parse(params["hashes"]))
+		hashes.each do |h|
+			p = student.presences.where(class_session: h.class_session)
+			p.attendance_code = h.attendance_code
+			p.save
+			puts "Marked #{student.username} as #{h.attendance_code} for class session in room #{h.class_session.room} at time #{h.class_session.start_time}"
+		end
   end
 
   def authenticate

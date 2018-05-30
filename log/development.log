@@ -593,3 +593,102 @@ Migrating to AddHashValueToClassSession (20180529163506)
   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `class_sessions` WHERE `class_sessions`.`room` IN (123, 124, 125)[0m
   [1m[36mClassSession Load (1.3ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` WHERE `class_sessions`.`hash_value` IN ('asdf', 'qwer', 'rtyu') LIMIT 11[0m
   [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `class_sessions` WHERE `class_sessions`.`hash_value` IN ('asdf', 'qwer', 'rtyu')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddHashToClassSession (20180529162932)
+  [1m[35m (138.4ms)[0m  [1m[35mALTER TABLE `class_sessions` ADD `hash` varchar(255)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180529162932')[0m
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveHashFromClassSession (20180529163416)
+  [1m[35m (147.1ms)[0m  [1m[35mALTER TABLE `class_sessions` DROP `hash`[0m
+  [1m[35m (4.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180529163416')[0m
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddHashValueToClassSession (20180529163506)
+  [1m[35m (163.6ms)[0m  [1m[35mALTER TABLE `class_sessions` ADD `hash_value` varchar(255)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180529163506')[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveHashValueFromClassSession (20180530022521)
+  [1m[35m (126.8ms)[0m  [1m[35mALTER TABLE `class_sessions` DROP `hash_value`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180530022521')[0m
+  [1m[35m (27.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateHashValues (20180530023129)
+  [1m[35m (1005.7ms)[0m  [1m[35mCREATE TABLE `hash_values` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `value` varchar(255), `class_session_id` bigint, `attendance_code_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_hash_values_on_class_session_id`  (`class_session_id`),  INDEX `index_hash_values_on_attendance_code_id`  (`attendance_code_id`), CONSTRAINT `fk_rails_4264da453d`
+FOREIGN KEY (`class_session_id`)
+  REFERENCES `class_sessions` (`id`)
+, CONSTRAINT `fk_rails_b27cb41370`
+FOREIGN KEY (`attendance_code_id`)
+  REFERENCES `attendance_codes` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateHashValues (20180530023129)
+  [1m[35m (70.2ms)[0m  [1m[35mCREATE TABLE `hash_values` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `value` varchar(255), `class_session_id` bigint, `attendance_code_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_hash_values_on_class_session_id`  (`class_session_id`),  INDEX `index_hash_values_on_attendance_code_id`  (`attendance_code_id`), CONSTRAINT `fk_rails_4264da453d`
+FOREIGN KEY (`class_session_id`)
+  REFERENCES `class_sessions` (`id`)
+, CONSTRAINT `fk_rails_b27cb41370`
+FOREIGN KEY (`attendance_code_id`)
+  REFERENCES `attendance_codes` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateAttendanceCodes (20180530023128)
+  [1m[35m (63.9ms)[0m  [1m[35mCREATE TABLE `attendance_codes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `code` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180530023128')[0m
+  [1m[35m (33.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHashValues (20180530023129)
+  [1m[35m (84.1ms)[0m  [1m[35mCREATE TABLE `hash_values` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `value` varchar(255), `class_session_id` bigint, `attendance_code_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_hash_values_on_class_session_id`  (`class_session_id`),  INDEX `index_hash_values_on_attendance_code_id`  (`attendance_code_id`), CONSTRAINT `fk_rails_4264da453d`
+FOREIGN KEY (`class_session_id`)
+  REFERENCES `class_sessions` (`id`)
+, CONSTRAINT `fk_rails_b27cb41370`
+FOREIGN KEY (`attendance_code_id`)
+  REFERENCES `attendance_codes` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180530023129')[0m
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemovePresentFromPresences (20180530024627)
+  [1m[35m (137.0ms)[0m  [1m[35mALTER TABLE `presences` DROP `present`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180530024627')[0m
+  [1m[35m (27.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttendanceCodeToPresences (20180530024753)
+  [1m[35m (159.2ms)[0m  [1m[35mALTER TABLE `presences` ADD `attendance_code_id` bigint[0m
+  [1m[35m (237.9ms)[0m  [1m[35mCREATE  INDEX `index_presences_on_attendance_code_id`  ON `presences` (`attendance_code_id`) [0m
+  [1m[35m (135.4ms)[0m  [1m[35mALTER TABLE `presences` ADD CONSTRAINT `fk_rails_7e0c86cece`
+FOREIGN KEY (`attendance_code_id`)
+  REFERENCES `attendance_codes` (`id`)
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180530024753')[0m
+  [1m[35m (26.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m

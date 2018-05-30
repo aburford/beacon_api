@@ -1,5 +1,4 @@
-class Presence < ApplicationRecord
+class HashValue < ApplicationRecord
   belongs_to :class_session
-  belongs_to :student
   belongs_to :attendance_code
 end

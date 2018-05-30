@@ -10,33 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180529163506) do
+ActiveRecord::Schema.define(version: 20180530024753) do
 
-  create_table "class_sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "attendance_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "class_sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "room"
     t.string "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "hash_value"
   end
 
-  create_table "presences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean "present"
+  create_table "hash_values", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "value"
+    t.bigint "class_session_id"
+    t.bigint "attendance_code_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attendance_code_id"], name: "index_hash_values_on_attendance_code_id"
+    t.index ["class_session_id"], name: "index_hash_values_on_class_session_id"
+  end
+
+  create_table "presences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.bigint "class_session_id"
     t.bigint "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "attendance_code_id"
+    t.index ["attendance_code_id"], name: "index_presences_on_attendance_code_id"
     t.index ["class_session_id"], name: "index_presences_on_class_session_id"
     t.index ["student_id"], name: "index_presences_on_student_id"
   end
 
-  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "username"
     t.string "auth_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "hash_values", "attendance_codes"
+  add_foreign_key "hash_values", "class_sessions"
+  add_foreign_key "presences", "attendance_codes"
   add_foreign_key "presences", "class_sessions"
   add_foreign_key "presences", "students"
 end
