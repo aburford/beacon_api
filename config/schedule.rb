@@ -18,3 +18,11 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+set :chronic_options, hours24: true
+
+every :weekday, at: '7:00' do
+	rake "ps:fetch"
+end
+
+#dump powerschool data sometime

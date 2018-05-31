@@ -3508,3 +3508,941 @@ Processing by ApiController#hashes as */*
 Completed 200 OK in 725ms (Views: 21.8ms | ActiveRecord: 11.7ms)
 
 
+  [1m[35m (22.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (27.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mPresence Load (0.9ms)[0m  [1m[34mSELECT `presences`.* FROM `presences`[0m
+  [1m[35mSQL (15.1ms)[0m  [1m[31mDELETE FROM `presences` WHERE `presences`.`id` = 2[0m
+  [1m[35mSQL (14.0ms)[0m  [1m[31mDELETE FROM `presences` WHERE `presences`.`id` = 3[0m
+  [1m[36mHashValue Load (0.4ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values`[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[31mDELETE FROM `hash_values` WHERE `hash_values`.`id` = 2[0m
+  [1m[35mSQL (10.9ms)[0m  [1m[31mDELETE FROM `hash_values` WHERE `hash_values`.`id` = 3[0m
+  [1m[35mSQL (21.6ms)[0m  [1m[31mDELETE FROM `hash_values` WHERE `hash_values`.`id` = 4[0m
+  [1m[35mSQL (30.9ms)[0m  [1m[31mDELETE FROM `hash_values` WHERE `hash_values`.`id` = 5[0m
+  [1m[36mClassSession Load (0.7ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM `class_sessions` WHERE `class_sessions`.`id` = 6[0m
+  [1m[35mSQL (10.8ms)[0m  [1m[31mDELETE FROM `class_sessions` WHERE `class_sessions`.`id` = 7[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[35mSQL (4.4ms)[0m  [1m[31mDELETE FROM `rooms` WHERE `rooms`.`id` = 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT `attendance_codes`.* FROM `attendance_codes`[0m
+  [1m[35mSQL (15.5ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 1[0m
+  [1m[35mSQL (10.4ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 2[0m
+  [1m[35mSQL (10.5ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 3[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (0, '2018-05-31 11:37:59', '2018-05-31 11:37:59')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (1, '2018-05-31 11:37:59', '2018-05-31 11:37:59')[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (2, '2018-05-31 11:37:59', '2018-05-31 11:37:59')[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `rooms` (`number`, `created_at`, `updated_at`) VALUES (123, '2018-05-31 11:37:59', '2018-05-31 11:37:59')[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`number` = 123 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClassSession Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `class_sessions` WHERE `class_sessions`.`room_id` = 2 AND `class_sessions`.`year` IS NULL LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (11.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mPresence Load (4.9ms)[0m  [1m[34mSELECT `presences`.* FROM `presences`[0m
+  [1m[36mHashValue Load (0.7ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values`[0m
+  [1m[36mClassSession Load (0.7ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[35mSQL (10.3ms)[0m  [1m[31mDELETE FROM `rooms` WHERE `rooms`.`id` = 2[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT `attendance_codes`.* FROM `attendance_codes`[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 4[0m
+  [1m[35mSQL (10.4ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 5[0m
+  [1m[35mSQL (22.3ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (0, '2018-05-31 11:40:39', '2018-05-31 11:40:39')[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (1, '2018-05-31 11:40:39', '2018-05-31 11:40:39')[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (2, '2018-05-31 11:40:39', '2018-05-31 11:40:39')[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `rooms` (`number`, `created_at`, `updated_at`) VALUES (123, '2018-05-31 11:40:39', '2018-05-31 11:40:39')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`number` = 123 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClassSession Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `class_sessions` WHERE `class_sessions`.`room_id` = 3 AND `class_sessions`.`start_time` = '8:34' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `class_sessions` (`start_time`, `created_at`, `updated_at`, `period`, `room_id`) VALUES ('8:34', '2018-05-31 11:40:39', '2018-05-31 11:40:39', 2, 3)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClassSession Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `class_sessions` WHERE `class_sessions`.`room_id` = 3 AND `class_sessions`.`start_time` = '9:41' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `class_sessions` (`start_time`, `created_at`, `updated_at`, `period`, `room_id`) VALUES ('9:41', '2018-05-31 11:40:39', '2018-05-31 11:40:39', 3, 3)[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 0 LIMIT 1[0m
+  [1m[36mClassSession Load (0.5ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `presences` (`class_session_id`, `student_id`, `created_at`, `updated_at`, `attendance_code_id`) VALUES (8, 3, '2018-05-31 11:40:39', '2018-05-31 11:40:39', 7)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `presences` (`class_session_id`, `student_id`, `created_at`, `updated_at`, `attendance_code_id`) VALUES (9, 3, '2018-05-31 11:40:39', '2018-05-31 11:40:39', 7)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mClassSession Load (1.0ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` LIMIT 11[0m
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` LIMIT 11[0m
+  [1m[35m (2.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (9.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddMajorAndMinorToHashValue (20180531114544)
+  [1m[35m (233.0ms)[0m  [1m[35mALTER TABLE `hash_values` ADD `major` varchar(255)[0m
+  [1m[35m (163.7ms)[0m  [1m[35mALTER TABLE `hash_values` ADD `minor` varchar(255)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180531114544')[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mHashValue Load (251.2ms)[0m  [1m[34mSELECT  `hash_values`.* FROM `hash_values` LIMIT 11[0m
+  [1m[36mPresence Load (54.3ms)[0m  [1m[34mSELECT  `presences`.* FROM `presences` LIMIT 11[0m
+  [1m[35m (36.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mPresence Load (0.7ms)[0m  [1m[34mSELECT `presences`.* FROM `presences`[0m
+  [1m[35mSQL (15.4ms)[0m  [1m[31mDELETE FROM `presences` WHERE `presences`.`id` = 4[0m
+  [1m[35mSQL (14.4ms)[0m  [1m[31mDELETE FROM `presences` WHERE `presences`.`id` = 5[0m
+  [1m[36mHashValue Load (19.5ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values`[0m
+  [1m[36mClassSession Load (0.4ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[35mSQL (4.4ms)[0m  [1m[31mDELETE FROM `class_sessions` WHERE `class_sessions`.`id` = 8[0m
+  [1m[35mSQL (12.4ms)[0m  [1m[31mDELETE FROM `class_sessions` WHERE `class_sessions`.`id` = 9[0m
+  [1m[36mRoom Load (6.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM `rooms` WHERE `rooms`.`id` = 3[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT `attendance_codes`.* FROM `attendance_codes`[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 7[0m
+  [1m[35mSQL (26.2ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 8[0m
+  [1m[35mSQL (10.8ms)[0m  [1m[31mDELETE FROM `attendance_codes` WHERE `attendance_codes`.`id` = 9[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (0, '2018-05-31 13:20:05', '2018-05-31 13:20:05')[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (1, '2018-05-31 13:20:05', '2018-05-31 13:20:05')[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `attendance_codes` (`code`, `created_at`, `updated_at`) VALUES (2, '2018-05-31 13:20:05', '2018-05-31 13:20:05')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `rooms` (`number`, `created_at`, `updated_at`) VALUES (123, '2018-05-31 13:20:05', '2018-05-31 13:20:05')[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`number` = 123 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClassSession Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `class_sessions` WHERE `class_sessions`.`room_id` = 4 AND `class_sessions`.`start_time` = '8:34' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `class_sessions` (`start_time`, `created_at`, `updated_at`, `period`, `room_id`) VALUES ('8:34', '2018-05-31 13:20:05', '2018-05-31 13:20:05', 2, 4)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClassSession Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `class_sessions` WHERE `class_sessions`.`room_id` = 4 AND `class_sessions`.`start_time` = '9:41' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `class_sessions` (`start_time`, `created_at`, `updated_at`, `period`, `room_id`) VALUES ('9:41', '2018-05-31 13:20:05', '2018-05-31 13:20:05', 3, 4)[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 0 LIMIT 1[0m
+  [1m[36mClassSession Load (0.7ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `presences` (`class_session_id`, `student_id`, `created_at`, `updated_at`, `attendance_code_id`) VALUES (10, 3, '2018-05-31 13:20:05', '2018-05-31 13:20:05', 10)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `presences` (`class_session_id`, `student_id`, `created_at`, `updated_at`, `attendance_code_id`) VALUES (11, 3, '2018-05-31 13:20:05', '2018-05-31 13:20:05', 10)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHashValue Load (0.9ms)[0m  [1m[34mSELECT  `hash_values`.* FROM `hash_values` LIMIT 11[0m
+  [1m[36mPresence Load (0.9ms)[0m  [1m[34mSELECT  `presences`.* FROM `presences` LIMIT 11[0m
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT  `students`.* FROM `students` LIMIT 11[0m
+  [1m[35m (5.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mPresence Load (1.7ms)[0m  [1m[34mSELECT `presences`.* FROM `presences`[0m
+  [1m[35mSQL (17.2ms)[0m  [1m[31mDELETE FROM `presences` WHERE `presences`.`id` = 6[0m
+  [1m[35mSQL (15.9ms)[0m  [1m[31mDELETE FROM `presences` WHERE `presences`.`id` = 7[0m
+  [1m[36mHashValue Load (0.5ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values`[0m
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students`[0m
+  [1m[36mClassSession Load (0.5ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 4 LIMIT 1[0m
+  [1m[35m (4.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mPresence Load (0.5ms)[0m  [1m[34mSELECT `presences`.* FROM `presences`[0m
+  [1m[36mHashValue Load (0.4ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values`[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students`[0m
+  [1m[36mClassSession Load (0.4ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 4 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 11, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '44c6', 'ff67')[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 11, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '365c', '53bf')[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 11, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'b166', '15d0')[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '71dd', '84ed')[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'fa94', 'f887')[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '6457', 'aa04')[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'c64a', '27e6')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'f445', '2ebe')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '8f02', '686a')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '06cc', 'ea75')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'ad3b', '2784')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '2df8', '8fcc')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'f610', '327f')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '233a', 'aa4b')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'e84f', '9c82')[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'b312', '76f9')[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '7be5', '03e0')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '6548', '7981')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '6657', '982a')[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '837e', 'dbce')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('0dc839eeeb11557ba8929b1163139763', 10, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '4c12', 'a795')[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 4 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 11, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'afd2', '000d')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 11, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'ab77', '722c')[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 11, '2018-05-31 13:23:11', '2018-05-31 13:23:11', '7ad2', '668b')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:11', '2018-05-31 13:23:11', 'c325', '0e91')[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '19df', '4e21')[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', 'b81e', 'c3a3')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '8a11', 'ae3a')[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '245d', 'ea4c')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '1609', '01f8')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '1f18', '254c')[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '3a71', '0fc0')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (1.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '3794', 'ed41')[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', 'a598', 'd689')[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.9ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '2c60', '93ec')[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', 'a76e', 'e5d4')[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '6983', 'ac83')[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '0167', 'ebd8')[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '50cc', '88b7')[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', 'aa33', '9b5a')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('94de9c242c60085bb796d84d085edcb3', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '0c64', '7a5b')[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `hash_values` (`value`, `class_session_id`, `attendance_code_id`, `created_at`, `updated_at`, `major`, `minor`) VALUES ('87dccbe12bd1d3254cffd61fb08ebce6', 11, 12, '2018-05-31 13:23:12', '2018-05-31 13:23:12', '74d7', 'ed53')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHashValue Load (0.7ms)[0m  [1m[34mSELECT  `hash_values`.* FROM `hash_values` LIMIT 11[0m
+  [1m[35m (23.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mHashValue Load (0.7ms)[0m  [1m[34mSELECT  `hash_values`.* FROM `hash_values` LIMIT 11[0m
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 09:28:00 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (0.8ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+Completed 200 OK in 95ms (Views: 0.4ms | ActiveRecord: 5.3ms)
+
+
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` LIMIT 11[0m
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 09:28:56 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[35m (5.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (0.8ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 09:37:58 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (0.7ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mClassSession Load (2.3ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` LIMIT 11[0m
+  [1m[36mPresence Load (1.0ms)[0m  [1m[34mSELECT  `presences`.* FROM `presences` LIMIT 11[0m
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 09:38:58 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (0.5ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mAttendanceCode Load (0.9ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 0 LIMIT 1[0m
+  [1m[36mClassSession Load (1.1ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `presences` (`class_session_id`, `student_id`, `created_at`, `updated_at`, `attendance_code_id`) VALUES (10, 3, '2018-05-31 13:39:02', '2018-05-31 13:39:02', 10)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `presences` (`class_session_id`, `student_id`, `created_at`, `updated_at`, `attendance_code_id`) VALUES (11, 3, '2018-05-31 13:39:02', '2018-05-31 13:39:02', 10)[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPresence Load (0.7ms)[0m  [1m[34mSELECT  `presences`.* FROM `presences` LIMIT 11[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[36mClassSession Load (1.0ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3 LIMIT 11[0m
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 09:40:04 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (0.6ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (0.6ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mHashValue Load (0.6ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+Completed 200 OK in 191ms (Views: 3.4ms | ActiveRecord: 25.4ms)
+
+
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[36mClassSession Load (0.6ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3 ORDER BY `class_sessions`.`id` ASC LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[36mClassSession Load (0.6ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3 ORDER BY `class_sessions`.`id` ASC LIMIT 1[0m
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT  `students`.* FROM `students` ORDER BY `students`.`id` DESC LIMIT 1[0m
+  [1m[36mClassSession Load (0.8ms)[0m  [1m[34mSELECT  `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3 ORDER BY `class_sessions`.`id` ASC LIMIT 1[0m
+  [1m[36mHashValue Load (4.3ms)[0m  [1m[34mSELECT  `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10 ORDER BY `hash_values`.`id` ASC LIMIT 1[0m
+  [1m[36mHashValue Load (0.8ms)[0m  [1m[34mSELECT  `hash_values`.* FROM `hash_values` WHERE `hash_values`.`value` = '0dc839eeeb11557ba8929b1163139763' LIMIT 1[0m
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 10:25:50 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (0.7ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (0.5ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (1.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.9ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mHashValue Load (0.9ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+Completed 200 OK in 228ms (Views: 5.5ms | ActiveRecord: 36.8ms)
+
+
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 10:35:23 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (1.2ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (1.1ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mHashValue Load (0.6ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 98ms (Views: 4.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 10:47:22 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (2.2ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (1.2ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (0.9ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mHashValue Load (0.9ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 123ms (Views: 3.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 10:52:49 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (2.0ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (1.2ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (1.0ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mHashValue Load (1.0ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 108ms (Views: 8.6ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 11:05:23 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (1.3ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (1.0ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.8ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mHashValue Load (1.0ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 9.8ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 11:36:06 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (2.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (1.4ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (1.0ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mHashValue Load (1.3ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.2ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 132ms (Views: 4.7ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 12:03:42 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (1.4ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (1.0ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.6ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAttendanceCode Load (0.7ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.1ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mHashValue Load (1.0ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 118ms (Views: 5.7ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 13:57:30 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/home/students/beacon_api/app/controllers/api_controller.rb:63: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...if h.value == json[i]['uuid'] h.major == json[i]['major'] an...
+...                              ^
+/home/students/beacon_api/app/controllers/api_controller.rb:83: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api_controller.rb:63: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/api_controller.rb:83: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/hashes" for 10.7.0.159 at 2018-05-31 13:58:34 -0400
+Cannot render console from 10.7.0.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (0.9ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (0.7ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mHashValue Load (0.6ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 164ms (Views: 3.3ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/api/hashes" for 10.7.0.49 at 2018-05-31 14:12:57 -0400
+Cannot render console from 10.7.0.49! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '673d6610878e4ed9b51477ccc973a3d2' LIMIT 1[0m
+  [1m[36mClassSession Load (0.9ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 3[0m
+  [1m[36mHashValue Load (0.7ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 10[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAttendanceCode Load (0.4ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mHashValue Load (0.6ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values` WHERE `hash_values`.`class_session_id` = 11[0m
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 11 LIMIT 1[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE AttendanceCode Load (0.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 12 LIMIT 1[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 5.3ms | ActiveRecord: 5.0ms)
+
+
+  [1m[36mPresence Load (1.0ms)[0m  [1m[34mSELECT  `presences`.* FROM `presences` ORDER BY `presences`.`id` ASC LIMIT 1[0m
+  [1m[36mPresence Load (0.6ms)[0m  [1m[34mSELECT  `presences`.* FROM `presences` ORDER BY `presences`.`id` ASC LIMIT 1[0m
+  [1m[36mAttendanceCode Load (0.5ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`id` = 10 LIMIT 1[0m

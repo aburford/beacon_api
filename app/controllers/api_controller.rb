@@ -9,14 +9,16 @@ class ApiController < ApplicationController
   	end
   end
   
-  CryptoBeacon = Struct.new(:period, :date, :hash, :attendance_code)
+  Hashes = Struct.new(:uuid, :major, :minor)
+  CryptoBeacon = Struct.new(:period, :date, :attendance_code, :hashes)
   
   def hashes
   	if student = authenticate
+  		puts "student authenticated"
       beacons = []
       student.class_sessions.each do |cs|
         cs.hash_values.each do |h|
-          beacons << CryptoBeacon.new(cs.period, Date.today().strftime("%Y-%-m-%-d"), h.value, h.attendance_code.code)
+          beacons << CryptoBeacon.new(cs.period, Date.today().strftime("%Y-%-m-%-d"), h.attendance_code.code, Hashes.new(h.value, h.major, h.minor))
         end
       end
       render json: beacons
@@ -26,7 +28,9 @@ class ApiController < ApplicationController
 #     "period": 2,
 #     "date": "2018-5-25",
 #     "hash": "1a48fa063cff47efaf1f011e23d4e6b0",
-#     "attendance_code": 1
+#     "attendance_code": 1,
+#			"major": 3a
+#			"minor": f4
 #   },
 #   {
 #     "period": 2,
@@ -54,7 +58,11 @@ class ApiController < ApplicationController
   def present
   	student = authenticate
 		# passing an array to .where() will automatically loop through all values
-		hashes = HashValue.where(value: JSON.parse(params["hashes"]))
+		json = JSON.parse(params['hashes'])
+		# probably a better way to do this but oh well
+		HashValue.all.each_with_index do |h, i|
+			hashes << h if h.value == json[i]['uuid'] and h.major == json[i]['major'] and h.minor == json[i]['minor']
+		end
 		hashes.each do |h|
 			pr = student.presences.find_by(class_session: h.class_session)
 			pr.attendance_code = h.attendance_code

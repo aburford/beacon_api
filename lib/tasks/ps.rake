@@ -1,6 +1,15 @@
 namespace :ps do
+	desc "Dumps presence records in PowerSchool and deletes all old data"
+	task :dump => :environment do
+		# dump all of the presence records back to PowerSchool folder
+
+    # delete all of the old data from yesterday
+    Presence.all.each { |pr| pr.delete }
+    HashValue.all.each { |h| h.delete }
+    # let seed test data persist ClassSession.all.each { |cs| cs.delete }
+  end
 	desc "Rakes in powerschool data"
-	task :dump_and_fetch => :environment do
+	task :fetch => :environment do
 		# dump all of the presence records back to PowerSchool folder
 
 
@@ -27,12 +36,20 @@ namespace :ps do
 			(-1..19).each do |i|
 				# creates hash_values for the first 20 minutes of each class 
 				current_t = t + 60 * i
-				hash_time = current_t.strftime "%m%d%Y%H%M"
+				hash_data = current_t.strftime "%m%d%Y%H"
+				# first 4 characters will be major, second four will be minor
+				major_minor_hash = sha256_hash(current_t.strftime("%m%d%Y%H%M"), cs.room.salt)
 				# 1 => present, 2 => tardy with credit (0 => unknown)
 				code = i < 2 ? 1 : 2
-				HashValue.create(value: `echo '#{hash_time}#{cs.room.salt}' | openssl sha256 |tail -c 33 | tr -d '\n' | sed 's/.\{2\}/& /g'`.chomp,
-					class_session: cs, attendance_code: AttendanceCode.find_by(code: code))
-			end	
+				HashValue.create(value: sha256_hash(hash_data, cs.room.salt),
+					class_session: cs,
+					attendance_code: AttendanceCode.find_by(code: code),
+					major: major_minor_hash[0..3],
+					minor: major_minor_hash[4..7])
+			end
 		end
+	end
+	def sha256_hash(data, salt)
+		return `echo '#{data}#{salt}' | openssl sha256 |tail -c 33 | tr -d '\n'`.chomp
 	end
 end

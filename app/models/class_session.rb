@@ -5,6 +5,6 @@ class ClassSession < ApplicationRecord
 	has_many :attendance_codes, :through => :hash_values
 	belongs_to :room
 
-	validates :room, uniqueness: { scope: :year,
+	validates :room, uniqueness: { scope: :start_time,
 		message: "ClassSession already created for another student" }
 end
