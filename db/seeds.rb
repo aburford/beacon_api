@@ -5,4 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-ClassSession.create(room: 1, start_time: '7:34', )
+
+# clear out other data
+Presence.all.each {|e| e.delete}
+HashValue.all.each {|e| e.delete}
+ClassSession.all.each {|e| e.delete}
+Room.all.each {|e| e.delete}
+AttendanceCode.all.each {|e| e.delete}
+
+AttendanceCode.create(code: 0) # unknown
+AttendanceCode.create(code: 1) # present
+AttendanceCode.create(code: 2) # tardy
+
+Room.create(number: 123)
+r = Room.find_by(number: 123)
+ClassSession.create(room: r, start_time: '8:34', period: 2)
+ClassSession.create(room: r, start_time: '9:41', period: 3)
+
+unknown = AttendanceCode.find_by(code: 0)
+ClassSession.all.each do |cs|
+	Presence.create(class_session: cs, student: Student.last, attendance_code: unknown)
+end
