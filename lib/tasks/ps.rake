@@ -37,12 +37,15 @@ namespace :ps do
 				# creates hash_values for the first 20 minutes of each class 
 				current_t = t + 60 * i
 				hash_data = current_t.strftime "%m%d%Y%H"
+				salt = cs.room.salt
+				# alternate the uuid every other minute cause iBeacon ranging API's suck
+				salt += 'odd' if i % 2 == 1
 				# first 4 characters will be major, second four will be minor
-				major_minor_hash = sha256_hash(current_t.strftime("%m%d%Y%H%M"), cs.room.salt)
+				major_minor_hash = sha256_hash(current_t.strftime("%m%d%Y%H%M"), salt)
 				# 1 => present, 2 => tardy with credit (0 => unknown)
 				code = i < 2 ? 1 : 2
 				puts "#{current_t.strftime("%H:%M")}\t#{major_minor_hash[0..3]}\t#{major_minor_hash[4..7]}"
-				HashValue.create(value: sha256_hash(hash_data, cs.room.salt),
+				HashValue.create(value: sha256_hash(hash_data, salt),
 					class_session: cs,
 					attendance_code: AttendanceCode.find_by(code: code),
 					major: major_minor_hash[0..3],

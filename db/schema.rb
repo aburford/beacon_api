@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20180531114544) do
 
-  create_table "attendance_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "attendance_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "class_sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "class_sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180531114544) do
     t.index ["room_id"], name: "index_class_sessions_on_room_id"
   end
 
-  create_table "hash_values", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "hash_values", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "value"
     t.bigint "class_session_id"
     t.bigint "attendance_code_id"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20180531114544) do
     t.index ["class_session_id"], name: "index_hash_values_on_class_session_id"
   end
 
-  create_table "presences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "presences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "class_session_id"
     t.bigint "student_id"
     t.datetime "created_at", null: false
@@ -50,14 +50,14 @@ ActiveRecord::Schema.define(version: 20180531114544) do
     t.index ["student_id"], name: "index_presences_on_student_id"
   end
 
-  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "number"
     t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "username"
     t.string "auth_token"
     t.datetime "created_at", null: false
