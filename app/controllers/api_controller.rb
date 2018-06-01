@@ -75,9 +75,9 @@ class ApiController < ApplicationController
 			pr = student.presences.find_by(class_session: h.class_session)
 			pr.attendance_code = h.attendance_code
 			pr.save
-			puts "Marked #{student.username} as #{h.attendance_code.code} for class session in room #{h.class_session.room.number} at time #{h.class_session.start_time}"
+			puts "Marked #{student.username} as #{h.attendance_code.code} for period #{h.class_session.period} in room #{h.class_session.room.number} at time #{h.class_session.start_time}"
 		end
-    render plain: "Success!"
+    head :no_content
   end
 
   def authenticate

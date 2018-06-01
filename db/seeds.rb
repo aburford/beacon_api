@@ -17,10 +17,10 @@ AttendanceCode.create(code: 0) # unknown
 AttendanceCode.create(code: 1) # present
 AttendanceCode.create(code: 2) # tardy
 
-Room.create(number: 123)
+Room.create(number: 123, salt: 'salty salt')
 r = Room.find_by(number: 123)
-ClassSession.create(room: r, start_time: '8:34', period: 2)
-ClassSession.create(room: r, start_time: '9:41', period: 3)
+ClassSession.create(room: r, start_time: '8:54', period: 2)
+ClassSession.create(room: r, start_time: '12:46', period: 3)
 
 unknown = AttendanceCode.find_by(code: 0)
 ClassSession.all.each do |cs|

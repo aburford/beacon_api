@@ -14,7 +14,7 @@ namespace :ps do
 
 
 		# delete all of the old data from yesterday
-		Presence.all.each { |pr| pr.delete }
+		# Presence.all.each { |pr| pr.delete }
 		HashValue.all.each { |h| h.delete }
 		# let seed test data persist ClassSession.all.each { |cs| cs.delete }
 
@@ -41,6 +41,7 @@ namespace :ps do
 				major_minor_hash = sha256_hash(current_t.strftime("%m%d%Y%H%M"), cs.room.salt)
 				# 1 => present, 2 => tardy with credit (0 => unknown)
 				code = i < 2 ? 1 : 2
+				puts "#{current_t.strftime("%H:%M")}\t#{major_minor_hash[0..3]}\t#{major_minor_hash[4..7]}"
 				HashValue.create(value: sha256_hash(hash_data, cs.room.salt),
 					class_session: cs,
 					attendance_code: AttendanceCode.find_by(code: code),
