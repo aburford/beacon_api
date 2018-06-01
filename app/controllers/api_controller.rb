@@ -29,26 +29,31 @@ class ApiController < ApplicationController
 #     "date": "2018-5-25",
 #     "hash": "1a48fa063cff47efaf1f011e23d4e6b0",
 #     "attendance_code": 1,
-#			"major": 3a
-#			"minor": f4
+#			"major": "3a",
+#			"minor": "f4"
 #   },
 #   {
 #     "period": 2,
 #     "date": "2018-5-25",
 #     "hash": "16596d62153747a58350660b3fa0a872",
-#     "attendance_code": 2
+#     "attendance_code": 2,
+# 		"major": "12",
+#			"minor": "f4"
 #   },
 #   {
 #     "period": 3,
 #     "date": "2018-5-25",
 #     "hash": "7c6195bb942a4c719ee96a4fb94f6788",
-#     "attendance_code": 1
+#     "attendance_code": 1,
+#     "major": "af",
+# 		"minor": "9e"
 #   },
 #   {
 #     "period": 3,
 #     "date": "2018-5-25",
 #     "hash": "34b8c621e8e64c72991d2144db6c7be2",
-#     "attendance_code": 2
+#     "attendance_code": 2,
+# 		"major"
 #   }
 # ]
 # 	  	)
@@ -59,9 +64,12 @@ class ApiController < ApplicationController
   	student = authenticate
 		# passing an array to .where() will automatically loop through all values
 		json = JSON.parse(params['hashes'])
-		# probably a better way to do this but oh well
-		HashValue.all.each_with_index do |h, i|
-			hashes << h if h.value == json[i]['uuid'] and h.major == json[i]['major'] and h.minor == json[i]['minor']
+		puts 'parsed json:'
+		p json
+		hashes = []
+		
+		json.each do |values|
+			hashes << HashValue.find_by(value: values['uuid'], major: values['major'], minor: values['minor'])
 		end
 		hashes.each do |h|
 			pr = student.presences.find_by(class_session: h.class_session)
