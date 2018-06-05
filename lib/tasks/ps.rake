@@ -19,26 +19,36 @@ namespace :ps do
 		ftp.chdir('Student Project')
 		workbook = RubyXL::Parser.parse(ftp.pwd+"/Attendance records with codes.xlsx")
 		#fix this line
-		letter_day = "a"
-
+		letter_day = "A"
+		semester = "S1"
+		schedule_type = :regular
 		Student.all.each do |s|
 			
 			workbook.worksheets[0].each do |row|
  				val = row[0].value
  				if val = s.number
- 				#not sure what types of values are given by xlsx doc and rubyxl
- 				location = row[7].value
- 				classExpression = row[3].value
- 				firstPeriod = classExpression[classExpression.index(letter_day)-2].to_i
- 				secondPeriod = classExpression[classExpression.rindex(letter_day)-2].to_i
+	 				# not sure what types of values are given by xlsx doc and rubyxl
+	 				if room = Room.find_by(number: row[7].value)
  				
- 				ClassSession.create(start_time: #whatever start time for the class's first period that day
- 					period: firstPeriod, 
- 					room_id: location)
- 				ClassSession.create(start_time: #whatever start time for the class's second period that day
- 					period: secondPeriod, 
- 					room_id: location)
- 				
+		 				class_expression = row[3].value
+		 				period = class_expression[class_expression.index(letter_day) - 2].to_i
+		 				period_a_lunch = findalunch(letter_day, s.number, period, semester, workbook)
+		 				first_period_start_time = StartTime.calc(period.to_i, letter_day, schedule_type, period_a_lunch)
+		 				
+		 				ClassSession.create(start_time: first_period_start_time
+		 					period: period, 
+		 					room: room)
+
+		 				if class_expression.index(letter_day) != class_expression.rindex(letter_day)
+		 					double_sci = class_expression[class_expression.rindex(letter_day) - 2].to_i
+		 					double_sci_a_lunch = findalunch(letter_day, s.number, double_sci, semester, workbook)
+		 					double_sci_start_time = StartTime.calc(period.to_i, letter_day, schedule_type, double_sci_a_lunch)
+		 					
+		 					ClassSession.create(start_time: double_sci_start_time
+		 					period: double_sci, 
+		 					room: room)
+	 					end
+	 				end
  				end
  			end
 			# fetch their schedule create ClassSessions and Presences
@@ -76,6 +86,18 @@ namespace :ps do
 	end
 	def sha256_hash(data, salt)
 		return `echo '#{data}#{salt}' | openssl sha256 |tail -c 33 | tr -d '\n'`.chomp
+	end
+	def findalunch(letter_day, student_num, period, semester, workbook)
+		if (letter_day == A and period == 5) || (letter_day != A and period == 7)
+	 		workbook.worksheets[0].each do |row|
+	 			if student_num = row[0].value
+	 				if (row[3].value = LA(A) and letter_day == A and row[9].value == semester) || (row[3].value = LA(B) and letter_day == B and row[9].value == semester)
+	 					return true
+	 				end
+	 			end	
+	 		end
+	 	end
+	 	return false
 	end
 
 	task :dummy_fetch => :environment do
