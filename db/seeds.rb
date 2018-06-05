@@ -6,24 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# clear out other data
+# DEBUG clear out any old data (not Students)
+Room.all.each {|e| e.delete}
+Room.create(number: 'Cafe', salt: 'salty salt')
 Presence.all.each {|e| e.delete}
 HashValue.all.each {|e| e.delete}
 ClassSession.all.each {|e| e.delete}
-Room.all.each {|e| e.delete}
-AttendanceCode.all.each {|e| e.delete}
+StartTime.all.each {|st| st.delete}
 
-AttendanceCode.create(code: 0) # unknown
-AttendanceCode.create(code: 1) # present
-AttendanceCode.create(code: 2) # tardy
-
-Room.create(number: 123, salt: 'salty salt')
-r = Room.find_by(number: 123)
-#ClassSession.create(room: r, start_time: '12:07', period: 2)
-# ClassSession.create(room: r, start_time: '9:49', period: 3)
-# ClassSession.create(room: r, start_time: '11:49', period: 4)
-
-unknown = AttendanceCode.find_by(code: 0)
-ClassSession.all.each do |cs|
-	Presence.create(class_session: cs, student: Student.last, attendance_code: unknown)
+# create the StartTimes
+# the last element is the time class starts when you have A lunch
+REG = ['7:34', '8:36', '9:41', '10:43', '11:45', '1:21', '12:18'].freeze
+SS = ['7:34', '8:31', '9:28', '10:55', '11:52', '1:26', '12:25'].freeze
+DELAY = ['9:34', '10:17', '11:02', '11:45', '12:28', '1:40', '12:51'].freeze
+MIN = ['7:34', '8:21', '9:11', '9:58', '10:45', '11:32', ''].freeze
+[REG, SS, DELAY, MIN].each_with_index do |times, type|
+	((1..6).to_a << 'LA').zip(times).to_h.each do |block, time|
+		StartTime.create(time: time, block: block, schedule_type: type)
+	end
 end

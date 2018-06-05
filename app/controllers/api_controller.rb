@@ -2,6 +2,8 @@ class ApiController < ApplicationController
 
   def get_token
   	# do LDAP authentication with the password
+  	# also save s.number (your student id e.g. 473718)
+  	# s.number = 473718
   	pass_correct = true
   	if pass_correct
   		puts "Creating new user..."
@@ -9,6 +11,7 @@ class ApiController < ApplicationController
   	end
   end
   
+  # used to easily format the json
   Hashes = Struct.new(:uuid, :major, :minor)
   CryptoBeacon = Struct.new(:period, :date, :attendance_code, :hashes)
   
@@ -22,6 +25,7 @@ class ApiController < ApplicationController
         end
       end
       render json: beacons
+      # render plain: "[]"
 # 	  	render plain: %(
 # [
 #   {
@@ -75,7 +79,7 @@ class ApiController < ApplicationController
 			pr = student.presences.find_by(class_session: h.class_session)
 			pr.attendance_code = h.attendance_code
 			pr.save
-			puts "Marked #{student.username} as #{h.attendance_code.code} for period #{h.class_session.period} in room #{h.class_session.room.number} at time #{h.class_session.start_time}"
+			puts "Marked #{student.username} as #{h.attendance_code.code} for period #{h.class_session.period} in room #{h.class_session.room.number} at time #{h.class_session.start_time.time}"
 		end
     head :no_content
   end
