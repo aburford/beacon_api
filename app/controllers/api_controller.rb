@@ -93,4 +93,8 @@ class ApiController < ApplicationController
     end
   end
 
+  def test
+    render plain: "Connection successful!\n"
+  end
+
 end

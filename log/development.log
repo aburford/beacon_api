@@ -439,3 +439,745 @@ Migrating to AddDescriptionToAttendanceCode (20180605154927)
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateStartTimes (20180605115303)
+  [1m[35m (117.4ms)[0m  [1m[35mCREATE TABLE `start_times` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `block` varchar(255), `schedule_type` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180605115303')[0m
+  [1m[35m (27.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStartTimeToClassSession (20180605115326)
+  [1m[35m (224.2ms)[0m  [1m[35mALTER TABLE `class_sessions` ADD `start_time_id` bigint[0m
+  [1m[35m (238.5ms)[0m  [1m[35mCREATE  INDEX `index_class_sessions_on_start_time_id`  ON `class_sessions` (`start_time_id`) [0m
+  [1m[35m (182.7ms)[0m  [1m[35mALTER TABLE `class_sessions` ADD CONSTRAINT `fk_rails_79ff3e1577`
+FOREIGN KEY (`start_time_id`)
+  REFERENCES `start_times` (`id`)
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180605115326')[0m
+  [1m[35m (43.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTimeToStartTime (20180605115411)
+  [1m[35m (157.6ms)[0m  [1m[35mALTER TABLE `start_times` ADD `time` varchar(255)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180605115411')[0m
+  [1m[35m (38.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveStartTimeFromClassSession (20180605133128)
+  [1m[35m (169.7ms)[0m  [1m[35mALTER TABLE `class_sessions` DROP `start_time`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180605133128')[0m
+  [1m[35m (27.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescriptionToAttendanceCode (20180605154927)
+  [1m[35m (189.6ms)[0m  [1m[35mALTER TABLE `attendance_codes` ADD `desc` varchar(255)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180605154927')[0m
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('8594219313228691800', 0)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('8594219313228691800')[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mRoom Load (2.0ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[35mSQL (44.1ms)[0m  [1m[31mDELETE FROM `rooms` WHERE `rooms`.`id` = 8[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mRoom Load (1.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[35mSQL (21.5ms)[0m  [1m[31mDELETE FROM `rooms` WHERE `rooms`.`id` = 8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Exists (15.1ms)[0m  [1m[34mSELECT  1 AS one FROM `rooms` WHERE `rooms`.`number` = BINARY 'Cafe' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `rooms` (`number`, `salt`, `created_at`, `updated_at`) VALUES ('Cafe', 'salty salt', '2018-06-05 21:21:57', '2018-06-05 21:21:57')[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPresence Load (1.5ms)[0m  [1m[34mSELECT `presences`.* FROM `presences`[0m
+  [1m[36mHashValue Load (1.5ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values`[0m
+  [1m[36mClassSession Load (1.6ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[36mStartTime Load (1.5ms)[0m  [1m[34mSELECT `start_times`.* FROM `start_times`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('1', 0, '2018-06-05 21:21:57', '2018-06-05 21:21:57', '7:34')[0m
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('2', 0, '2018-06-05 21:21:57', '2018-06-05 21:21:57', '8:36')[0m
+  [1m[35m (25.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('3', 0, '2018-06-05 21:21:57', '2018-06-05 21:21:57', '9:41')[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('4', 0, '2018-06-05 21:21:57', '2018-06-05 21:21:57', '10:43')[0m
+  [1m[35m (25.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('5', 0, '2018-06-05 21:21:57', '2018-06-05 21:21:57', '11:45')[0m
+  [1m[35m (25.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('6', 0, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '1:21')[0m
+  [1m[35m (24.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('LA', 0, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '12:18')[0m
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('1', 1, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '7:34')[0m
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('2', 1, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '8:31')[0m
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('3', 1, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '9:28')[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('4', 1, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '10:55')[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('5', 1, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '11:52')[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('6', 1, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '1:26')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('LA', 1, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '12:25')[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('1', 2, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '9:34')[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('2', 2, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '10:17')[0m
+  [1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('3', 2, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '11:02')[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('4', 2, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '11:45')[0m
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('5', 2, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '12:28')[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('6', 2, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '1:40')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('LA', 2, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '12:51')[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('1', 3, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '7:34')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('2', 3, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '8:21')[0m
+  [1m[35m (19.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('3', 3, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '9:11')[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('4', 3, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '9:58')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('5', 3, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '10:45')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('6', 3, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '11:32')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('LA', 3, '2018-06-05 21:21:58', '2018-06-05 21:21:58', '')[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAttendanceCode Load (2.3ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 0 LIMIT 1[0m
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mClassSession Load (0.8ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[35m (1.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (14.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `class_sessions`[0m
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` LIMIT 11[0m
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT `students`.* FROM `students`[0m
+  [1m[35mSQL (26.7ms)[0m  [1m[31mDELETE FROM `students` WHERE `students`.`id` = 17[0m
+Started POST "/api/get_token" for 192.168.1.5 at 2018-06-05 17:45:21 -0400
+Cannot render console from 192.168.1.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"burfordan18", "pass"=>"qwerty"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('burfordan18', 'a1a26e7a79d34de085c4bfb894aaa086', '2018-06-05 21:45:24', '2018-06-05 21:45:24')[0m
+  [1m[35m (29.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 320ms (Views: 4.8ms | ActiveRecord: 39.7ms)
+
+
+  [1m[35m (1.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mRoom Load (1.7ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[35mSQL (30.8ms)[0m  [1m[31mDELETE FROM `rooms` WHERE `rooms`.`id` = 9[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM `rooms` WHERE `rooms`.`number` = BINARY 'Cafe' LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `rooms` (`number`, `salt`, `created_at`, `updated_at`) VALUES ('Cafe', 'salty salt', '2018-06-05 21:51:47', '2018-06-05 21:51:47')[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPresence Load (1.0ms)[0m  [1m[34mSELECT `presences`.* FROM `presences`[0m
+  [1m[36mHashValue Load (1.0ms)[0m  [1m[34mSELECT `hash_values`.* FROM `hash_values`[0m
+  [1m[36mClassSession Load (1.0ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+  [1m[36mStartTime Load (2.2ms)[0m  [1m[34mSELECT `start_times`.* FROM `start_times`[0m
+  [1m[35mSQL (28.4ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 1[0m
+  [1m[35mSQL (25.0ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 2[0m
+  [1m[35mSQL (29.5ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 3[0m
+  [1m[35mSQL (24.9ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 4[0m
+  [1m[35mSQL (25.3ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 5[0m
+  [1m[35mSQL (24.9ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 6[0m
+  [1m[35mSQL (25.1ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 7[0m
+  [1m[35mSQL (30.7ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 8[0m
+  [1m[35mSQL (25.0ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 9[0m
+  [1m[35mSQL (24.9ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 10[0m
+  [1m[35mSQL (25.2ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 11[0m
+  [1m[35mSQL (24.9ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 12[0m
+  [1m[35mSQL (34.1ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 13[0m
+  [1m[35mSQL (25.5ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 14[0m
+  [1m[35mSQL (25.1ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 15[0m
+  [1m[35mSQL (27.3ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 16[0m
+  [1m[35mSQL (24.8ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 17[0m
+  [1m[35mSQL (28.9ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 18[0m
+  [1m[35mSQL (24.7ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 19[0m
+  [1m[35mSQL (37.2ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 20[0m
+  [1m[35mSQL (25.0ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 21[0m
+  [1m[35mSQL (35.3ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 22[0m
+  [1m[35mSQL (32.0ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 23[0m
+  [1m[35mSQL (24.0ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 24[0m
+  [1m[35mSQL (16.3ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 25[0m
+  [1m[35mSQL (14.9ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 26[0m
+  [1m[35mSQL (19.1ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 27[0m
+  [1m[35mSQL (19.2ms)[0m  [1m[31mDELETE FROM `start_times` WHERE `start_times`.`id` = 28[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('1', 0, '2018-06-05 21:51:48', '2018-06-05 21:51:48', '7:34')[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('2', 0, '2018-06-05 21:51:48', '2018-06-05 21:51:48', '8:36')[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('3', 0, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '9:41')[0m
+  [1m[35m (32.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('4', 0, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '10:43')[0m
+  [1m[35m (47.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('5', 0, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '11:45')[0m
+  [1m[35m (39.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('6', 0, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '1:21')[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('LA', 0, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '12:18')[0m
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('1', 1, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '7:34')[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('2', 1, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '8:31')[0m
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('3', 1, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '9:28')[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('4', 1, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '10:55')[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('5', 1, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '11:52')[0m
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('6', 1, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '1:26')[0m
+  [1m[35m (28.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('LA', 1, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '12:25')[0m
+  [1m[35m (25.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('1', 2, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '9:34')[0m
+  [1m[35m (33.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('2', 2, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '10:17')[0m
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('3', 2, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '11:02')[0m
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('4', 2, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '11:45')[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('5', 2, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '12:28')[0m
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('6', 2, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '1:40')[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('LA', 2, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '12:51')[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('1', 3, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '7:34')[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('2', 3, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '8:21')[0m
+  [1m[35m (34.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('3', 3, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '9:11')[0m
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('4', 3, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '9:58')[0m
+  [1m[35m (23.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('5', 3, '2018-06-05 21:51:49', '2018-06-05 21:51:49', '10:45')[0m
+  [1m[35m (33.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('6', 3, '2018-06-05 21:51:50', '2018-06-05 21:51:50', '11:32')[0m
+  [1m[35m (32.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `start_times` (`block`, `schedule_type`, `created_at`, `updated_at`, `time`) VALUES ('LA', 3, '2018-06-05 21:51:50', '2018-06-05 21:51:50', '')[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAttendanceCode Load (1.0ms)[0m  [1m[34mSELECT  `attendance_codes`.* FROM `attendance_codes` WHERE `attendance_codes`.`code` = 0 LIMIT 1[0m
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 473718 LIMIT 1[0m
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`number` = 471818 LIMIT 1[0m
+  [1m[36mClassSession Load (0.9ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions`[0m
+Started GET "/" for 192.168.1.4 at 2018-06-05 18:35:15 -0400
+Cannot render console from 192.168.1.4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/pi/.rvm/gems/ruby-2.3.3/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pi/.rvm/gems/ruby-2.3.3/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (51.6ms)
+Completed 200 OK in 266ms (Views: 111.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authenticate" for 192.168.1.4 at 2018-06-05 18:35:34 -0400
+Cannot render console from 192.168.1.4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/authenticate"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+thin (1.7.0) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.0) lib/thin/connection.rb:84:in `catch'
+thin (1.7.0) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.0) lib/thin/connection.rb:53:in `process'
+thin (1.7.0) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+thin (1.7.0) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.0) lib/thin/server.rb:162:in `start'
+thin (1.7.0) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.0) lib/thin/runner.rb:200:in `run_command'
+thin (1.7.0) lib/thin/runner.rb:156:in `run!'
+thin (1.7.0) bin/thin:6:in `<top (required)>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `load'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `<main>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `eval'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-06-05 18:47:50 -0400
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/pi/.rvm/gems/ruby-2.3.3/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pi/.rvm/gems/ruby-2.3.3/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (29.5ms)
+Completed 200 OK in 105ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authenticate" for 127.0.0.1 at 2018-06-05 18:47:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/authenticate"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+thin (1.7.0) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.0) lib/thin/connection.rb:84:in `catch'
+thin (1.7.0) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.0) lib/thin/connection.rb:53:in `process'
+thin (1.7.0) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+thin (1.7.0) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.0) lib/thin/server.rb:162:in `start'
+thin (1.7.0) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.0) lib/thin/runner.rb:200:in `run_command'
+thin (1.7.0) lib/thin/runner.rb:156:in `run!'
+thin (1.7.0) bin/thin:6:in `<top (required)>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `load'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `<main>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `eval'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `<main>'
+Started GET "/get_token" for 127.0.0.1 at 2018-06-05 18:48:07 -0400
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/get_token"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+thin (1.7.0) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.0) lib/thin/connection.rb:84:in `catch'
+thin (1.7.0) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.0) lib/thin/connection.rb:53:in `process'
+thin (1.7.0) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+thin (1.7.0) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.0) lib/thin/server.rb:162:in `start'
+thin (1.7.0) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.0) lib/thin/runner.rb:200:in `run_command'
+thin (1.7.0) lib/thin/runner.rb:156:in `run!'
+thin (1.7.0) bin/thin:6:in `<top (required)>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `load'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `<main>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `eval'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `<main>'
+Started GET "/authenticate" for 127.0.0.1 at 2018-06-05 18:48:24 -0400
+  [1m[35m (1.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/authenticate"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+thin (1.7.0) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.0) lib/thin/connection.rb:84:in `catch'
+thin (1.7.0) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.0) lib/thin/connection.rb:53:in `process'
+thin (1.7.0) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+thin (1.7.0) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.0) lib/thin/server.rb:162:in `start'
+thin (1.7.0) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.0) lib/thin/runner.rb:200:in `run_command'
+thin (1.7.0) lib/thin/runner.rb:156:in `run!'
+thin (1.7.0) bin/thin:6:in `<top (required)>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `load'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `<main>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `eval'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `<main>'
+Started GET "/test" for 127.0.0.1 at 2018-06-05 18:51:28 -0400
+  [1m[35m (2.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/test"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+thin (1.7.0) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.0) lib/thin/connection.rb:84:in `catch'
+thin (1.7.0) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.0) lib/thin/connection.rb:53:in `process'
+thin (1.7.0) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+thin (1.7.0) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.0) lib/thin/server.rb:162:in `start'
+thin (1.7.0) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.0) lib/thin/runner.rb:200:in `run_command'
+thin (1.7.0) lib/thin/runner.rb:156:in `run!'
+thin (1.7.0) bin/thin:6:in `<top (required)>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `load'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `<main>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `eval'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `<main>'
+Started GET "/test" for 127.0.0.1 at 2018-06-05 18:51:42 -0400
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/test"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+thin (1.7.0) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.0) lib/thin/connection.rb:84:in `catch'
+thin (1.7.0) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.0) lib/thin/connection.rb:53:in `process'
+thin (1.7.0) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+thin (1.7.0) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.0) lib/thin/server.rb:162:in `start'
+thin (1.7.0) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.0) lib/thin/runner.rb:200:in `run_command'
+thin (1.7.0) lib/thin/runner.rb:156:in `run!'
+thin (1.7.0) bin/thin:6:in `<top (required)>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `load'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `<main>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `eval'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `<main>'
+Started GET "/api/authenticate" for 127.0.0.1 at 2018-06-05 18:52:12 -0400
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/authenticate"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+thin (1.7.0) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.0) lib/thin/connection.rb:84:in `catch'
+thin (1.7.0) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.0) lib/thin/connection.rb:53:in `process'
+thin (1.7.0) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run_machine'
+eventmachine (1.2.5) lib/eventmachine.rb:194:in `run'
+thin (1.7.0) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.0) lib/thin/server.rb:162:in `start'
+thin (1.7.0) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.0) lib/thin/runner.rb:200:in `run_command'
+thin (1.7.0) lib/thin/runner.rb:156:in `run!'
+thin (1.7.0) bin/thin:6:in `<top (required)>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `load'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/thin:22:in `<main>'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `eval'
+/home/pi/.rvm/gems/ruby-2.3.3/bin/ruby_executable_hooks:15:in `<main>'
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 18:52:19 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.3ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 18:52:33 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 18:52:41 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 18:52:46 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 20:30:01 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 20:39:27 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 22:00:31 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 22:03:47 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-05 22:05:38 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 127.0.0.1 at 2018-06-06 06:34:41 -0400
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+

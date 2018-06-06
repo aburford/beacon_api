@@ -14,6 +14,8 @@ namespace :ps do
 	task :fetch => :environment do
 		# fetch the new data for today from PowerSchool folder
 		server = 'amity-DS'
+		# for debugging at home, set up a mock ftp server
+		server = '127.0.0.1'
 		user = ENV['FTP_USER']
 		password = ENV['FTP_PASSWORD']
 		ftp = Net::FTP.new(server, user, password)
