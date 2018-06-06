@@ -1181,3 +1181,734 @@ Processing by ApiController#test as */*
 Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:14:18 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (58.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.4ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', 'ba65524f70dd4fc7a33d64b787b32be3', '2018-06-06 14:14:19', '2018-06-06 14:14:19')[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 114ms (Views: 10.9ms | ActiveRecord: 44.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:15:in `get_token'
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:14:51 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (6.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', '4076f48f59a049f48e184955d97f5880', '2018-06-06 14:14:52', '2018-06-06 14:14:52')[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 43ms (Views: 3.2ms | ActiveRecord: 11.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:15:in `get_token'
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:15:05 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (9.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.1ms)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', 'ee8e0975db4e4bdfaba66338cb212c0e', '2018-06-06 14:15:06', '2018-06-06 14:15:06')[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 59ms (Views: 3.6ms | ActiveRecord: 19.9ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:15:in `get_token'
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:15:48 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', 'e9ef80848e784c63800da8a167809977', '2018-06-06 14:15:58', '2018-06-06 14:15:58')[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 50ms (Views: 1.3ms | ActiveRecord: 13.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:16:in `get_token'
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:16:54 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 401 Unauthorized in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:17:21 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 401 Unauthorized in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:18:41 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+No template found for ApiController#get_token, rendering head :no_content
+Completed 204 No Content in 22ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:19:15 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+No template found for ApiController#get_token, rendering head :no_content
+Completed 204 No Content in 28ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:19:20 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+No template found for ApiController#get_token, rendering head :no_content
+Completed 204 No Content in 15ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:20:14 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+No template found for ApiController#get_token, rendering head :no_content
+Completed 204 No Content in 31ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:20:51 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+No template found for ApiController#get_token, rendering head :no_content
+Completed 204 No Content in 16ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:21:15 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+No template found for ApiController#get_token, rendering head :no_content
+Completed 204 No Content in 29ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.7.12.65 at 2018-06-06 10:27:28 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/students/.rvm/gems/ruby-2.5.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/students/.rvm/gems/ruby-2.5.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
+Completed 200 OK in 35ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:27:36 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:28:01 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:29:26 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:29:55 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:30:43 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:31:32 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:31:54 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:32:00 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:32:06 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:32:07 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:32:35 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:33:57 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (undefined method `before_filter' for ApiController:Class
+Did you mean?  before_action):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:44:29 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:45:06 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::BadRequest (Bearer Auth Failed):
+  
+app/controllers/api_controller.rb:97:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:47:38 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template api/test, application/test with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/students/beacon_api/app/views"
+):
+  
+app/controllers/api_controller.rb:100:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:47:57 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:47:58 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:48:07 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/home/students/beacon_api/app/controllers/api_controller.rb:100: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+		render :plain "asdf", :status => 401
+		              ^
+/home/students/beacon_api/app/controllers/api_controller.rb:100: syntax error, unexpected ',', expecting keyword_end
+		render :plain "asdf", :status => 401
+		                    ^):
+  
+app/controllers/api_controller.rb:100: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+app/controllers/api_controller.rb:100: syntax error, unexpected ',', expecting keyword_end
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:48:18 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:48:35 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:49:01 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:49:02 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:49:33 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 5ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/api_controller.rb:98:in `bearer_auth'
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:49:47 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.1ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:49:48 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.1ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:50:09 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:50:53 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:51:32 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:52:04 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/home/students/beacon_api/app/controllers/api_controller.rb:110: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api_controller.rb:110: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:52:41 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/home/students/beacon_api/app/controllers/api_controller.rb:109: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api_controller.rb:109: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:53:00 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', 'e5a42079c93346378932de9c5f218343', '2018-06-06 14:53:00', '2018-06-06 14:53:00')[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 50ms (Views: 1.4ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:53:14 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/home/students/beacon_api/app/controllers/api_controller.rb:109: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api_controller.rb:109: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:53:24 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/home/students/beacon_api/app/controllers/api_controller.rb:109: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api_controller.rb:109: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:53:36 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:54:07 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:55:12 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:56:04 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (8.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', 'a093e8fe09a5454790664ee78aa1b8fe', '2018-06-06 14:56:05', '2018-06-06 14:56:05')[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 54ms (Views: 1.4ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/api/get_token" for 10.7.5.202 at 2018-06-06 10:56:26 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', '4344351565dc493aa9e2fd8b136ff38f', '2018-06-06 14:56:36', '2018-06-06 14:56:36')[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 41ms (Views: 1.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:57:16 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:57:55 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.2ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:58:03 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:58:08 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:58:10 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 10:58:13 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/hashes" for 10.7.5.202 at 2018-06-06 11:02:43 -0400
+Cannot render console from 10.7.5.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '4344351565dc493aa9e2fd8b136ff38f' LIMIT 1[0m
+  [1m[36mClassSession Load (10.4ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 20[0m
+Completed 200 OK in 201ms (Views: 0.6ms | ActiveRecord: 27.6ms)
+
+
+Started POST "/api/get_token" for 10.7.0.41 at 2018-06-06 11:05:38 -0400
+Cannot render console from 10.7.0.41! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"burfordan", "pass"=>"asdf"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('burfordan', '76f3d720b8ee49aaa6095d646ba2f12b', '2018-06-06 15:05:38', '2018-06-06 15:05:38')[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 1.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/hashes" for 10.7.0.41 at 2018-06-06 11:08:38 -0400
+Cannot render console from 10.7.0.41! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#hashes as */*
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT  `students`.* FROM `students` WHERE `students`.`auth_token` = '76f3d720b8ee49aaa6095d646ba2f12b' LIMIT 1[0m
+  [1m[36mClassSession Load (1.2ms)[0m  [1m[34mSELECT `class_sessions`.* FROM `class_sessions` INNER JOIN `presences` ON `class_sessions`.`id` = `presences`.`class_session_id` WHERE `presences`.`student_id` = 21[0m
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 11:09:59 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 11:10:12 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 11:10:23 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 11:10:32 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as */*
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/test" for 10.7.12.65 at 2018-06-06 12:11:13 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#test as HTML
+  Rendering text template
+  Rendered text template (0.1ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 12:32:34 -0400
+  [1m[35m (10.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"burfordan18", "pass"=>"thepassword"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 15ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 12:33:02 -0400
+  [1m[35m (22.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"burfordan18", "pass"=>"thepassword"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 12:40:52 -0400
+  [1m[35m (5.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 12:41:27 -0400
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.1ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 12:41:49 -0400
+  [1m[35m (2.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 12:43:30 -0400
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  [1m[35m (10.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', '7e3eb3620ef1418dacf26a0aecd95b27', '2018-06-06 16:43:30', '2018-06-06 16:43:30')[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 110ms (Views: 1.5ms | ActiveRecord: 27.0ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 13:10:11 -0400
+  [1m[35m (28.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', '0721541fea1043db9eccd6709a748ac1', '2018-06-06 17:10:13', '2018-06-06 17:10:13')[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 99ms (Views: 1.4ms | ActiveRecord: 35.7ms)
+
+
+Started POST "/api/get_token" for 10.7.12.65 at 2018-06-06 13:56:13 -0400
+Cannot render console from 10.7.12.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (7.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  Rendering text template
+  Rendered text template (0.0ms)
+Filter chain halted as :bearer_auth rendered or redirected
+Completed 401 Unauthorized in 23ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 13:59:31 -0400
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', '5464c7d420f34c5c9ca78b37d88c88c7', '2018-06-06 17:59:31', '2018-06-06 17:59:31')[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 67ms (Views: 1.5ms | ActiveRecord: 18.6ms)
+
+
+Started POST "/api/get_token" for 127.0.0.1 at 2018-06-06 14:00:04 -0400
+  [1m[35m (4.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ApiController#get_token as */*
+  Parameters: {"user"=>"", "pass"=>""}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO `students` (`username`, `auth_token`, `created_at`, `updated_at`) VALUES ('', '0e328e1742a14c49a50e0e8f1de08c7c', '2018-06-06 18:00:04', '2018-06-06 18:00:04')[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 110ms (Views: 1.3ms | ActiveRecord: 47.4ms)
+
+

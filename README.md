@@ -1,1 +1,1 @@
-cp beacon_api to /etc/thin
+The backend server for Beacon Attendance

@@ -1,0 +1,34 @@
+Writing PID to tmp/pids/thin.3000.pid
+Using rack adapter
+Thin web server (v1.7.2 codename Bachmanity)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3000, CTRL+C to stop
+Exiting!
+Writing PID to tmp/pids/thin.3000.pid
+Using rack adapter
+Thin web server (v1.7.2 codename Bachmanity)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3000, CTRL+C to stop
+Creating new user...
+authenticate method called
+token:
+65456a456fae45fdbd9230d61768b9a4
+student authenticated
+Creating new user...
+Exiting!
+Writing PID to tmp/pids/thin.3000.pid
+Using rack adapter
+Thin web server (v1.7.0 codename Dunder Mifflin)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3000, CTRL+C to stop
+bearer auth succeeded!
+bearer auth called
+Bearer Optional("BeArErDaTa1@3")
+BeArErDaTa1@3
+bearer auth succeeded!
+Exiting!
+Writing PID to tmp/pids/thin.3000.pid
+Using rack adapter
+Thin web server (v1.7.0 codename Dunder Mifflin)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3000, CTRL+C to stop

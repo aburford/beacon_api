@@ -1,12 +1,12 @@
 class ApiController < ApplicationController
-
+	before_action :bearer_auth
+  
   def get_token
   	# do LDAP authentication with the password
   	# also save s.number (your student id e.g. 473718)
   	# s.number = 473718
   	pass_correct = true
   	if pass_correct
-  		puts "Creating new user..."
   		render json: Student.create(username: params['user'])
   	end
   end
@@ -93,8 +93,12 @@ class ApiController < ApplicationController
     end
   end
 
+  def bearer_auth
+  	render :plain => 'Unauthorized', :status => 401 and return unless auth = request.headers['Authorization']
+		render :plain => 'Unauthorized', :status => 401 unless auth.split(' ').last == ENV['BEARER']
+  end
+
   def test
     render plain: "Connection successful!\n"
   end
-
 end
