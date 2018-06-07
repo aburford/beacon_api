@@ -73,7 +73,7 @@ namespace :ps do
 				hash_data = current_t.strftime "%m%d%Y%H"
 				salt = cs.room.salt
 				# alternate the uuid every other minute cause iBeacon ranging API's suck
-				salt += 'odd' if (current_t.min) % 2 == 1
+				salt += '-odd' if (current_t.min) % 2 == 1
 				# first 4 characters will be major, second four will be minor
 				major_minor_hash = sha256_hash(current_t.strftime("%m%d%Y%H%M"), salt)
 				# 1 => present, 2 => tardy with credit (0 => unknown)
@@ -112,7 +112,6 @@ namespace :ps do
 
 	task :dummy_fetch => :environment do
 		# create all of the hash values
-		# create all of the hash values
 		ClassSession.all.each do |cs|
 		  # for each ClassSession of the day, the corresponding salt and start time will be taken
 			t = cs.start_time.parse_time
@@ -123,16 +122,16 @@ namespace :ps do
 				hash_data = current_t.strftime "%m%d%Y%H"
 				salt = cs.room.salt
 				# alternate the uuid every other minute cause iBeacon ranging API's suck
-				salt += 'odd' if (current_t.min) % 2 == 1
+				salt += '-odd' if (current_t.min) % 2 == 1
 				# first 4 characters will be major, second four will be minor
 				major_minor_hash = sha256_hash(current_t.strftime("%m%d%Y%H%M"), salt)
 				# 1 => present, 2 => tardy with credit (0 => unknown)
 				case i
-				when i < 2
+				when (-1..1)
 					code = 1
 				when (2..20)
 					code = 2
-				when i > 20
+				else
 					code = 3
 				end
 				# puts "#{current_t.strftime("%H:%M")}\t#{major_minor_hash[0..3]}\t#{major_minor_hash[4..7]}"
