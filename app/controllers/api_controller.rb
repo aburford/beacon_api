@@ -6,8 +6,12 @@ class ApiController < ApplicationController
   	# also save s.number (your student id e.g. 473718)
   	# s.number = 473718
   	pass_correct = true
+  	number = 473718 if params['user'] == 'burfordan18'
+  	number = 471818 if params['user'] == 'livi18'
   	if pass_correct
-  		render json: Student.create(username: params['user'])
+  		s = Student.find_by(username: params['user'])
+  		s ||= Student.create(username: params['user'], number: number)
+  		render json: s
   	end
   end
   
@@ -100,10 +104,6 @@ class ApiController < ApplicationController
 
   def test
     render plain: "Connection successful!\n"
-  end
-
-  def demo
-
   end
 
   def info

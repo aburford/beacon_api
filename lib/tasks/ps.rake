@@ -28,7 +28,7 @@ namespace :ps do
 		
 
 		# hardcoded values for testing
-		letter_day = 'A'
+		letter_day = 'B'
 		semester = "S1"
 		schedule_type = :regular
 		
