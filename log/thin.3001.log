@@ -27,3 +27,49 @@ Using rack adapter
 Thin web server (v1.7.0 codename Dunder Mifflin)
 Maximum connections set to 1024
 Listening on 0.0.0.0:3001, CTRL+C to stop
+authenticate method called
+token:
+135d7acde4404ce6bb5f9067ca6dd2af
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+parsed json:
+[{"major"=>"9a4d", "minor"=>"d546", "uuid"=>"a264a75d605e80655e36731ee5d891b7"}]
+Marked burfordan18 as 1 for period 3 in room Cafe at time 9:41
+Exiting!
+Writing PID to tmp/pids/thin.3001.pid
+Using rack adapter
+Thin web server (v1.7.0 codename Dunder Mifflin)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3001, CTRL+C to stop
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+parsed json:
+[{"major"=>"32ba", "minor"=>"2812", "uuid"=>"ddb58866edf8ad5e503543702fe21dae"}]
+Marked burfordan18 as 3 for period 3 in room Cafe at time 9:41

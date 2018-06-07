@@ -7,13 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # DEBUG clear out any old data (not Students)
-Room.all.each {|e| e.delete}
-Room.create(number: 'Cafe', salt: 'salty salt')
 Presence.all.each {|e| e.delete}
 HashValue.all.each {|e| e.delete}
 ClassSession.all.each {|e| e.delete}
-StartTime.all.each {|st| st.delete}
 
+Room.all.each {|e| e.delete}
+Room.create(number: 'Cafe', salt: 'salty salt')
+
+AttendanceCode.all.each {|e| e.delete}
+AttendanceCode.create(code: 0, desc: 'unknown')
+AttendanceCode.create(code: 1, desc: 'Present')
+AttendanceCode.create(code: 2, desc: 'Tardy')
+AttendanceCode.create(code: 3, desc: 'Tardy Without Credit')
+
+StartTime.all.each {|st| st.delete}
 # create the StartTimes
 # the last element is the time class starts when you have A lunch
 REG = ['7:34', '8:36', '9:41', '10:43', '11:45', '1:21', '12:18'].freeze

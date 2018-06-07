@@ -5,17 +5,17 @@ namespace :ps do
 	task :dump => :environment do
 		# dump all of the presence records back to PowerSchool folder
 
-	    # delete all of the old data from yesterday
-	    Presence.all.each { |pr| pr.delete }
-	    HashValue.all.each { |h| h.delete }
-	    # let seed test data persist ClassSession.all.each { |cs| cs.delete }
-	  end
+    # delete all of the old data from yesterday
+    Presence.all.each { |pr| pr.delete }
+    HashValue.all.each { |h| h.delete }
+    # let seed test data persist ClassSession.all.each { |cs| cs.delete }
+  end
 	desc "Parses in powerschool data"
 	task :fetch => :environment do
 		# fetch the new data for today from PowerSchool folder
 		server = 'amity-DS'
 		# for debugging at home, set up a mock ftp server
-		server = '127.0.0.1'
+		# server = '127.0.0.1'
 		user = ENV['FTP_USER']
 		password = ENV['FTP_PASSWORD']
 		ftp = Net::FTP.new(server, user, password)
@@ -56,33 +56,35 @@ namespace :ps do
  					double_sci_start_time = StartTime.calc(period, letter_day, schedule_type, double_sci_a_lunch)
  					
  					ClassSession.create(start_time: double_sci_start_time,
- 					period: double_sci, 
- 					room: room)
+	 					period: double_sci, 
+	 					room: room)
  				end
 			end
 		end
 
-
 		# create all of the hash values
 		ClassSession.all.each do |cs|
-		  # for each ClassSession of the day, the corresponding salt and start time will be taken	
-			# start_time is in "hour:minute", split on ":" and convert to integers
-			time_ints = cs.start_time.time.split(':').map(&:to_i)
-			today = Date.today
-			# a new time object is created with today's year, month, day, and the start time of the specific class
-			t = Time.new(today.year, today.month, today.mday, time_ints[0], time_ints[1])
+		  # for each ClassSession of the day, the corresponding salt and start time will be taken
+			t = cs.start_time.parse_time
 			# should we just go all out with 60 minutes? we'd need to check the start_time of the next period
-			(-1..19).each do |i|
+			(-1..cs.start_time.length).each do |i|
 				# creates hash_values for the first 20 minutes of each class 
 				current_t = t + 60 * i
 				hash_data = current_t.strftime "%m%d%Y%H"
 				salt = cs.room.salt
 				# alternate the uuid every other minute cause iBeacon ranging API's suck
-				salt += 'odd' if (i + time_ints[1]) % 2 == 1
+				salt += 'odd' if (current_t.min) % 2 == 1
 				# first 4 characters will be major, second four will be minor
 				major_minor_hash = sha256_hash(current_t.strftime("%m%d%Y%H%M"), salt)
 				# 1 => present, 2 => tardy with credit (0 => unknown)
-				code = i < 2 ? 1 : 2
+				case i
+				when (-1..1)
+					code = 1
+				when (2..20)
+					code = 2
+				else
+					code = 3
+				end
 				# puts "#{current_t.strftime("%H:%M")}\t#{major_minor_hash[0..3]}\t#{major_minor_hash[4..7]}"
 				HashValue.create(value: sha256_hash(hash_data, salt),
 					class_session: cs,
@@ -110,26 +112,30 @@ namespace :ps do
 
 	task :dummy_fetch => :environment do
 		# create all of the hash values
+		# create all of the hash values
 		ClassSession.all.each do |cs|
-		  # for each ClassSession of the day, the corresponding salt and start time will be taken	
-			# start_time is in "hour:minute", split on ":" and convert to integers
-			time_ints = cs.start_time.split(':').map(&:to_i)
-			today = Date.today
-			# a new time object is created with today's year, month, day, and the start time of the specific class
-			t = Time.new(today.year, today.month, today.mday, time_ints[0], time_ints[1])
+		  # for each ClassSession of the day, the corresponding salt and start time will be taken
+			t = cs.start_time.parse_time
 			# should we just go all out with 60 minutes? we'd need to check the start_time of the next period
-			(-1..19).each do |i|
+			(-1..cs.start_time.length).each do |i|
 				# creates hash_values for the first 20 minutes of each class 
 				current_t = t + 60 * i
 				hash_data = current_t.strftime "%m%d%Y%H"
 				salt = cs.room.salt
 				# alternate the uuid every other minute cause iBeacon ranging API's suck
-				salt += 'odd' if (i + time_ints[1]) % 2 == 1
+				salt += 'odd' if (current_t.min) % 2 == 1
 				# first 4 characters will be major, second four will be minor
 				major_minor_hash = sha256_hash(current_t.strftime("%m%d%Y%H%M"), salt)
 				# 1 => present, 2 => tardy with credit (0 => unknown)
-				code = i < 2 ? 1 : 2
-				puts "#{current_t.strftime("%H:%M")}\t#{major_minor_hash[0..3]}\t#{major_minor_hash[4..7]}"
+				case i
+				when i < 2
+					code = 1
+				when (2..20)
+					code = 2
+				when i > 20
+					code = 3
+				end
+				# puts "#{current_t.strftime("%H:%M")}\t#{major_minor_hash[0..3]}\t#{major_minor_hash[4..7]}"
 				HashValue.create(value: sha256_hash(hash_data, salt),
 					class_session: cs,
 					attendance_code: AttendanceCode.find_by(code: code),

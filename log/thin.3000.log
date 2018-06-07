@@ -32,3 +32,37 @@ Using rack adapter
 Thin web server (v1.7.0 codename Dunder Mifflin)
 Maximum connections set to 1024
 Listening on 0.0.0.0:3000, CTRL+C to stop
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+Exiting!
+Writing PID to tmp/pids/thin.3000.pid
+Using rack adapter
+Thin web server (v1.7.0 codename Dunder Mifflin)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3000, CTRL+C to stop
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated
+authenticate method called
+token:
+f1007ecca9c44af59e7b7a580067c14b
+student authenticated

@@ -21,7 +21,7 @@ class ApiController < ApplicationController
       beacons = []
       student.class_sessions.each do |cs|
         cs.hash_values.each do |h|
-          beacons << CryptoBeacon.new(cs.period, Date.today().strftime("%Y-%-m-%-d"), h.attendance_code.code, Hashes.new(h.value, h.major, h.minor))
+          beacons << CryptoBeacon.new(cs.period, Date.today().strftime("%Y-%-m-%-d"), h.attendance_code.desc, Hashes.new(h.value, h.major, h.minor))
         end
       end
       render json: beacons
@@ -101,4 +101,19 @@ class ApiController < ApplicationController
   def test
     render plain: "Connection successful!\n"
   end
+
+  def demo
+
+  end
+
+  def info
+		render plain: %Q(How to use this app:
+1. Keep bluetooth on at all times
+2. If you attendance fails to sync to the server, make sure it syncs by the end of the day. The server will only accept attendance records for the current day.
+3. Make sure you allow the app to always access your location
+
+How does it work?
+We use bluetooth beacons to verify your location. The entire system is open source in 3 different respositories at https://www.github.com/aburford. Go check it out.)
+	end
+
 end
